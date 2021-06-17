@@ -1,0 +1,247 @@
+/* Defaults */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+nav {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Makes Images Responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Heading and logo */
+#start-logo {
+  position: absolute;
+  width: 14em;
+  top: 15%;
+  z-index: 1;
+  opacity: .3;
+  transition: opacity .5s ease;
+}
+
+#start-logo:hover {
+  opacity: 1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 10px;
+  color: white;
+  background-color: rgb(43, 43, 43);
+  z-index: 2;
+}
+
+header.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: .8;
+  transition: all 0.75s ease
+}
+
+.sticky:hover {
+  padding: 30px;
+  opacity: 1
+}
+
+nav {
+  display: flex;
+}
+
+.nav-item {
+  margin: 13px 2em 0 0;
+}
+
+.nav-item a {
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.5s ease, color 0.5s;
+}
+
+a:hover {
+  color: #202b47;
+  background-color: #fff;
+}
+
+#carousel {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+#carousel #carousel-text {
+  position: absolute;
+  top: 45vh;
+  color: #fff;
+  text-shadow: 4px 4px #252525;
+  z-index: 1;
+  /* font-size: 2em; */
+  text-align: center;
+}
+
+#carousel-text h1 {
+  font-size: 5em;
+}
+
+#carousel .carousel-image {
+  position: absolute;
+  display: block;
+  margin: auto;
+  min-width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 1.5s;
+}
+
+#carousel .carousel-image.hidden {
+  opacity: 0;
+}
+
+/* Section */
+section {
+  box-sizing: border-box;
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+
+/* Basic Flex Constructs */
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  .flex {
+    flex-flow: column wrap;
+    padding: 0 15px;
+  }
+}
+
+#product {
+  background-color: white;
+  padding: 20px 20px 0 20px;
+  text-align: center;
+}
+
+#product h2 {
+  font-size: 3rem;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+#product.active h2 {
+  opacity: 1;
+}
+
+#product.active #productmockup{
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+#product.active p {
+  transform: translateX(0px);
+}
+
+#product p {
+  transform: translateX(-2500px);
+  transition: all 1.5s ease-in-out;
+  font-size: 1.5rem;
+  padding: 0 10%
+}
+
+#product #productmockup {
+  align-self: center;
+  transform: translateX(1000px);
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
+}
+
+#product img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#portfolio {
+  background-color: rgb(43, 41, 41);
+  height: 100%
+}
+
+#portfolio h1 {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#portfolio .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  color: white
+}
+
+.projects {
+  flex: 0 0 33%;
+  height: auto;
+  transition: all .8s ease;
+  text-align: center;
+  padding: 0 50px
+}
+
+.projects:hover {
+  background-color: rgb(39, 191, 140);
+  color: rgb(43, 41, 41);
+}
+
+/* Button */
+
+button {
+  width: 90%;
+  height: 50px;
+  color: white;
+  border-radius: 10px;
+  margin: 20px 0;
+  outline: none;
+  background-color: rgb(39, 69, 79);
+  font-size: 1.5rem;
+  box-shadow: 2px 5px 10px rgb(23, 126, 92);
+  transition: all .5s ease;
+  border: none;
+}
+
+button:hover {
+  box-shadow: 4px 7px 10px rgb(43, 41, 41);
+  cursor: pointer;
+  transform: scale(1.01)
+}
+
+button:active {
+  box-shadow: 4px 7px 10px rgb(43, 41, 41);
+  cursor: pointer;
+  transform: scale(1)
+}
+
+footer {
+  background-color: rgb(34, 36, 35);
+  width: 100vw;
+  height: 6em;
+  color: #fff;
+}
